@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 217.2 32.6% 17.5%;
+    --card: 210 40% 100%;
+    --card-foreground: 217.2 32.6% 17.5%;
+    --popover: 210 40% 100%;
+    --popover-foreground: 217.2 32.6% 17.5%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 217.2 32.6% 17.5%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 217.2 32.6% 17.5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 217.2 32.6% 17.5%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 27.9% 26.9%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 27.9% 26.9%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 215 27.9% 26.9%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 27.9% 26.9%;
+    --input: 215 27.9% 26.9%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+@layer utilities {
+  .aurora-bg {
+    animation: aurora 60s linear infinite;
+    background-image: radial-gradient(
+        ellipse 50% 50% at 50% 50%,
+        hsl(var(--primary) / 0.1),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 50% 50% at 50% 50%,
+        hsl(var(--accent) / 0.1),
+        transparent
+      );
+    background-size: 200% 200%;
+    position: absolute;
+    inset: 0;
+  }
+}
